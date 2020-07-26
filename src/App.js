@@ -38,15 +38,13 @@ const App = (props) => {
  
     let updatedLikes = posts.map( (post) => {
       if(post.id === postId) {
-        //return post.likes + 1
-        this.setPosts({post: post.likes + 1})
+        return post.likes + 1
       }
       return {...post}
     })
     console.log(updatedLikes)
-
+    //this.setPosts({posts: posts})
     return updatedLikes;
-    
   }
 
   return (
