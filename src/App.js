@@ -23,8 +23,7 @@ const App = (props) => {
   //console.log(posts[0])
   //console.log(posts)
   
- 
-  const likePost = postId => {
+  const likePost = (postId) => {
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
 
@@ -36,21 +35,18 @@ const App = (props) => {
         - if the `id` of the post matches `postId`, return a new post object with the desired values (use the spread operator).
         - otherwise just return the post object unchanged.
      */
-    //setDummyPosts(dummyPosts.map( post => { postId === post.id ? post.likes += 1 : post}))
-    // setPosts(posts.map( post => { 
-    //   //return (postId === post.id ? console.log(postId) : console.log("Not yet...") )
-    //   console.log(post)
-    // }));
-    posts.map( post => {
-      if(postId === post.id) {
-        //setPosts(post.likes + 1)
-        console.log(post.likes)
-      } else {
-        console.log("I don't know, man...")
+ 
+    let updatedLikes = posts.map( (post) => {
+      if(post.id === postId) {
+        //return post.likes + 1
+        this.setPosts({post: post.likes + 1})
       }
+      return {...post}
     })
+    console.log(updatedLikes)
 
-
+    return updatedLikes;
+    
   }
 
   return (
