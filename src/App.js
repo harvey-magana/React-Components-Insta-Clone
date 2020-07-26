@@ -37,13 +37,24 @@ const App = (props) => {
         - otherwise just return the post object unchanged.
      */
     //setDummyPosts(dummyPosts.map( post => { postId === post.id ? post.likes += 1 : post}))
-    setPosts(posts.map( post => { post === post.id ? console.log("It works!") : console.log("Not yet...") }));
+    // setPosts(posts.map( post => { 
+    //   //return (postId === post.id ? console.log(postId) : console.log("Not yet...") )
+    //   console.log(post)
+    // }));
+    posts.map( post => {
+      if(postId === post.id) {
+        //setPosts(post.likes + 1)
+        console.log(post.likes)
+      } else {
+        console.log("I don't know, man...")
+      }
+    })
+
 
   }
 
   return (
     <div className='App'>
-      <div>Something cool will show up soon.</div>
       <SearchBar />
       <Posts likePost={likePost} dummyPosts={posts} />
       {/* Add SearchBar and Posts here to render them */}
