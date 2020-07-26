@@ -23,6 +23,7 @@ const App = (props) => {
   //console.log(posts[0])
   //console.log(posts)
   
+  console.log({posts: setPosts});
   const likePost = (postId) => {
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
@@ -38,12 +39,11 @@ const App = (props) => {
  
     let updatedLikes = posts.map( (post) => {
       if(post.id === postId) {
-        return post.likes + 1
+        return post.likes += 1
       }
       return {...post}
     })
     console.log(updatedLikes)
-    //this.setPosts({posts: posts})
     return updatedLikes;
   }
 
