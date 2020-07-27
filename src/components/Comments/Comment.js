@@ -4,7 +4,6 @@ import React from 'react';
 const Comment = props => {
   // 🔥 Make sure the parent of Comment is passing the right props!
   const { comment } = props;
-  console.log(comment)
 
   return (
     <div className='comment-text'>

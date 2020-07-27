@@ -37,14 +37,24 @@ const App = (props) => {
         - otherwise just return the post object unchanged.
      */
  
-    let updatedLikes = posts.map( (post) => {
-      if(post.id === postId) {
-        return post.likes += 1
+    // let updatedLikes = posts.map( (post) => {
+    //   if(post.id === postId) {
+    //     return post.likes = post.likes += 1
+    //   }
+    //   return {...post}
+    // })
+    // console.log(updatedLikes)
+    // return updatedLikes;
+    setPosts(posts.map(index=>{
+      if(index.id === postId){
+        return{...index, likes: index.likes +1}
       }
-      return {...post}
-    })
-    console.log(updatedLikes)
-    return updatedLikes;
+      return index
+    }))
+
+
+
+
   }
 
   return (
