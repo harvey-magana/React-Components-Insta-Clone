@@ -23,7 +23,7 @@ const App = (props) => {
   //console.log(posts[0])
   //console.log(posts)
   
-  console.log({posts: setPosts});
+
   const likePost = (postId) => {
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
