@@ -10,8 +10,8 @@ const Post = props => {
   return (
     <div className='post-border'>
       <PostHeader
-        username={post.username}
-        thumbnailUrl={post.thumbnailUrl}
+        username={props.post.username}
+        thumbnailUrl={props.post.thumbnailUrl}
       />
       <div className='post-image-wrapper'>
         <img
@@ -21,9 +21,9 @@ const Post = props => {
         />
       </div>
       {/* Is LikeSection getting all the props it needs to work correctly? */}
-      <LikeSection likePost={() => likePost(post.id)} />
+      <LikeSection likePost={() => likePost(post.id)} numberOfLikes={post.likes} post={post} />
       {/* Comments also wants its props! */}
-      <Comments />
+      <Comments comments={post} />
     </div>
   );
 };
